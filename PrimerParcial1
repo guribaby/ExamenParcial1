@@ -1,0 +1,162 @@
+package parcial1;
+import java.util.Scanner;
+
+public class Examen {
+	
+	public static String primeraMayuscula () {
+		
+		System.out.println("Sistema que cambia la primer letra de la cadena por Mayúsculas");
+		System.out.println("Introduzca una frase:");
+		
+		String ñ;
+		Scanner cuFra = new Scanner (System.in);
+		ñ= cuFra.nextLine();
+		
+		String charPrimera = ñ ;
+		char ini = charPrimera.charAt(0);
+		
+		
+		
+		if (Character.isUpperCase(ini)) {
+			
+			System.out.println("Su caracter inicial ya esta dado en mayúscula");
+			
+		} else {
+			
+			String hu = String.valueOf(ini);  
+			String mayu = hu.toUpperCase();
+			
+			//char nuevoLetra= mayu.charAt(0);
+			
+			String antLetra = Character.toString(ini);
+			
+			String nuevaFrase = ñ.replaceFirst(antLetra,mayu); 
+			
+			System.out.println(nuevaFrase);
+			
+			
+		}
+		return null;
+	}
+	
+	
+	public static String invertirCadena () {
+		
+		System.out.println("Sistema para invertir una cadena");
+		System.out.println("Introduce la cadena a invertir");
+		
+		String w;
+		Scanner invCad = new Scanner (System.in);
+		w= invCad.nextLine();
+		String j= "Lo inverso de tu cadena es:";
+		
+		String tamaño= w;
+		int t = tamaño.length();
+		
+		System.out.println(j);
+		
+		for (int l=t-1; l>=0; l--) {
+			
+			String charT = w ;
+			char nchar = charT.charAt(l);
+		    String bb = String.valueOf(nchar);
+		      
+		      System.out.println(bb);
+		}
+		return null;			
+	}
+	
+	
+	public static String vocalesMayuscula () {
+		
+		System.out.println("Sistema que cambia las vocales por Mayúsculas");
+		System.out.println("Introduce una cadena");
+		
+		String voMa;
+		Scanner vocales = new Scanner (System.in);
+		voMa= vocales.nextLine();
+		
+		String nuevoVoc = voMa.replace("a", "A").replace("e", "E").replace("i", "I").replace("o", "O").replace("u","U");
+		
+		System.out.println(nuevoVoc);
+		
+		
+	return null;	
+		
+		}
+	
+	
+	public int fizzBuzz () {
+		
+		System.out.println("Sistema FizzBuzz");
+		
+		for (int x=1; x<=99 ; x ++) { 
+					
+			int a= x%3 ;
+			int b= x%5;
+			int c= x%15;
+			
+			int numero = x;
+			String z = String.valueOf(numero);					
+			if ( (a == 0) && !(c==0)) {			
+					
+				String multiploTres = z;
+				multiploTres = multiploTres.replace(z,"Fizz");
+				System.out.println(multiploTres);			
+			}			
+			if ((b == 0) && !(c==0) ) {	
+				
+				String multiploCinco = z;
+				multiploCinco = multiploCinco.replace(z,"Buzz");
+				System.out.println(multiploCinco);		
+			}
+			if (c == 0) {
+				
+				String multiploR = z;
+				multiploR = multiploR.replace(z,"FizzBuzz");
+				System.out.println(multiploR);
+		
+			}
+			
+			if (!(a==0) && !(b==0) && !(c== 0)) {
+				
+				System.out.println(x);
+				
+			}	 
+		}
+		
+		return 100;
+		
+		
+	}
+	
+	public static String palindromo () {
+		
+	System.out.println("Sistema que detecta si es palindromo");
+	System.out.println("Atencion:");
+	System.out.println("Favor de colocar la cadena sin mayúsculas y sin espacio entre palabras");
+	System.out.println("Disculpe las molestias pero estamos aprendiendo para mejorar este programa");
+	System.out.println("Introduce una cadena");
+		
+		String w;
+		Scanner invCad = new Scanner (System.in);
+		w= invCad.nextLine().toLowerCase();
+		
+		StringBuilder abc = new StringBuilder(w);
+		String invertida = abc.reverse().toString();
+
+		   if (w.equals(invertida)) {
+			   
+			   System.out.println("Es un palíandromo");
+			   
+		   }else {
+			  
+			   System.out.println("No es un palíandromo");
+			   
+		   }			      	        
+			      
+	        return null; 
+	    }
+	
+	
+	}
